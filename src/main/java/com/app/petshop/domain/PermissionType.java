@@ -1,4 +1,4 @@
-package com.app.petshop.repository;
+package com.app.petshop.domain;
 
 public enum PermissionType {
      ADMIN, COMMOM

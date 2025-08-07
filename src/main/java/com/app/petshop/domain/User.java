@@ -1,6 +1,5 @@
 package com.app.petshop.domain;
 
-import com.app.petshop.repository.PermissionType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,13 +29,5 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     private PermissionType permission;
 
-    public User(Long id, String name, LocalDate birthDate, String email, String password, PermissionType permission) {
-        this.id = id;
-        this.name = name;
-        this.birthDate = birthDate;
-        this.email = email;
-        this.password = password;
-        this.permission = permission;
-    }
 }
 

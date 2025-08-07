@@ -1,6 +1,6 @@
 package com.app.petshop.dto;
 
-import com.app.petshop.repository.PermissionType;
+import com.app.petshop.domain.PermissionType;
 
 import java.time.LocalDate;
 
