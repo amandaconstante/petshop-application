@@ -14,7 +14,12 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable()) // Desabilita CSRF para facilitar teste com POST
+                .headers(headers -> headers
+                        .defaultsDisabled() // Desabilita todos os headers padrão
+                        .frameOptions(frame -> frame.sameOrigin()) // Libera iframes do mesmo domínio// 👈 Permite iframes do mesmo domínio
+                )
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/h2-console/**").permitAll() // Libera o console H2
                         .anyRequest().permitAll() // Libera acesso a todos os endpoints
                 );
 
