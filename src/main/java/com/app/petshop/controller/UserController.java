@@ -1,6 +1,8 @@
 package com.app.petshop.controller;
 
-import com.app.petshop.dto.UserDto;
+import com.app.petshop.domain.User;
+import com.app.petshop.dto.UserRequestDto;
+import com.app.petshop.dto.UserResponseDto;
 import com.app.petshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,9 +19,10 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<UserDto> create(@RequestBody UserDto userDto) {
-        userService.createUser(userDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(userDto);
+    public ResponseEntity<UserResponseDto> create(@RequestBody UserRequestDto userRequestDto) {
+        User user = userService.createUser(userRequestDto);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new UserResponseDto(user.getId(), user.getName(), user.getBirthDate(), user.getName()));
     }
 
 }
