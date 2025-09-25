@@ -23,11 +23,9 @@ public class UserService {
         user.setEmail(userRequestDto.email());
         user.setPermission(userRequestDto.permission());
         user.setPassword(getHashedPassword(userRequestDto.password()));
-        userRepository.save(user);
 
-        return user;
+        return userRepository.save(user);
     }
-
     /*
     *       if (userRequestDto.permission().equals(PermissionType.COMMOM)) {
             // TO-DO:
