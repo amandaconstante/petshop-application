@@ -22,7 +22,7 @@ public class UserController {
     public ResponseEntity<UserResponseDto> create(@RequestBody UserRequestDto userRequestDto) {
         User user = userService.createUser(userRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new UserResponseDto(user.getId(), user.getName(), user.getBirthDate(), user.getName()));
+                .body(new UserResponseDto(user.getId(), user.getName(), user.getLogin(), user.getBirthDate(), user.getName()));
     }
 
 }

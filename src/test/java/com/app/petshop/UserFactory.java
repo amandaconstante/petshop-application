@@ -1,6 +1,6 @@
 package com.app.petshop;
 
-import com.app.petshop.domain.PermissionType;
+import com.app.petshop.domain.UserRole;
 import com.app.petshop.domain.User;
 import com.app.petshop.dto.UserRequestDto;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,6 +13,7 @@ public class UserFactory {
         User mockUser = new User();
         mockUser.setId(10L);
         mockUser.setName(userInput.name());
+        mockUser.setLogin(userInput.login());
         mockUser.setEmail(userInput.email());
         mockUser.setBirthDate(userInput.birthDate());
         mockUser.setPassword(new BCryptPasswordEncoder().encode(userInput.password()));
@@ -23,10 +24,11 @@ public class UserFactory {
     public static UserRequestDto createUserRequestDto() {
         return new UserRequestDto(
                 "Mocala",
+                "mockadinho",
                 LocalDate.now(),
                 "a@b.com",
                 "123",
-                PermissionType.COMMOM
+                UserRole.COMMOM
         );
     }
 

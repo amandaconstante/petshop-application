@@ -36,6 +36,7 @@ public class UserServiceTest {
         User userCreated = userService.createUser(userInput);
 
         assertThat(userCreated.getName()).isEqualTo("Mocala");
+        assertThat(userCreated.getLogin()).isEqualTo("mockadinho");
         assertNotNull(userCreated.getId());
         assertEquals(10L, userCreated.getId());
     }

@@ -19,9 +19,9 @@ public class Tutor extends User implements Serializable {
     private List<Pet> pets;
     private LocalDate registerDate;
 
-    public Tutor(Long id, String name, LocalDate birthDate, String email, String password,
-                 PermissionType permissionType, List<Pet> pets, LocalDate registerDate) {
-        super(id, name, birthDate, email, password, permissionType);
+    public Tutor(Long id, String name, String login, LocalDate birthDate, String email, String password,
+                 UserRole userRole, List<Pet> pets, LocalDate registerDate) {
+        super(id, name, login, birthDate, email, password, userRole);
         this.pets = pets;
         this.registerDate = registerDate;
     }

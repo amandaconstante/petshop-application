@@ -1,6 +1,5 @@
 package com.app.petshop.service;
 
-import com.app.petshop.domain.PermissionType;
 import com.app.petshop.domain.User;
 import com.app.petshop.dto.UserRequestDto;
 import com.app.petshop.repository.UserRepository;
@@ -19,6 +18,7 @@ public class UserService {
    //     validate(userRequestDto);
         User user = new User();
         user.setName(userRequestDto.name());
+        user.setLogin(userRequestDto.login());
         user.setBirthDate(userRequestDto.birthDate());
         user.setEmail(userRequestDto.email());
         user.setPermission(userRequestDto.permission());
@@ -27,7 +27,7 @@ public class UserService {
         return userRepository.save(user);
     }
     /*
-    *       if (userRequestDto.permission().equals(PermissionType.COMMOM)) {
+    *       if (userRequestDto.permission().equals(UserRole.COMMOM)) {
             // TO-DO:
             // chama método para criar o tutor no TutorService (injetar aqui)
             // site terá cadastro apenas do usuário comum como um site padrão
