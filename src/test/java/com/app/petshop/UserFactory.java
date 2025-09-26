@@ -1,0 +1,33 @@
+package com.app.petshop;
+
+import com.app.petshop.domain.PermissionType;
+import com.app.petshop.domain.User;
+import com.app.petshop.dto.UserRequestDto;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import java.time.LocalDate;
+
+public class UserFactory {
+
+    public static User createUser(UserRequestDto userInput) {
+        User mockUser = new User();
+        mockUser.setId(10L);
+        mockUser.setName(userInput.name());
+        mockUser.setEmail(userInput.email());
+        mockUser.setBirthDate(userInput.birthDate());
+        mockUser.setPassword(new BCryptPasswordEncoder().encode(userInput.password()));
+        mockUser.setPermission(userInput.permission());
+        return mockUser;
+    }
+
+    public static UserRequestDto createUserRequestDto() {
+        return new UserRequestDto(
+                "Mocala",
+                LocalDate.now(),
+                "a@b.com",
+                "123",
+                PermissionType.COMMOM
+        );
+    }
+
+}
