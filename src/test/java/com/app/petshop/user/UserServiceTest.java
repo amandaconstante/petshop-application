@@ -1,6 +1,6 @@
 package com.app.petshop;
 
-import com.app.petshop.domain.User;
+import com.app.petshop.domain.user.User;
 import com.app.petshop.dto.UserRequestDto;
 import com.app.petshop.repository.UserRepository;
 import com.app.petshop.service.UserService;
@@ -11,7 +11,6 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;

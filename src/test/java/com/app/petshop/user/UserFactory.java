@@ -1,7 +1,7 @@
 package com.app.petshop;
 
-import com.app.petshop.domain.UserRole;
-import com.app.petshop.domain.User;
+import com.app.petshop.domain.user.UserRole;
+import com.app.petshop.domain.user.User;
 import com.app.petshop.dto.UserRequestDto;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
