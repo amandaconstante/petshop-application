@@ -1,4 +1,4 @@
-package com.app.petshop;
+package com.app.petshop.user;
 
 import com.app.petshop.domain.user.UserRole;
 import com.app.petshop.domain.user.User;
